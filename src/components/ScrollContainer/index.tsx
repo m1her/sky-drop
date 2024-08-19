@@ -1,32 +1,34 @@
 "use client";
-import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
-import React, { ReactNode, useRef, useState } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
+import React, { ReactNode, useEffect, useRef } from "react";
 
 export const ScrollContainer = ({ children }: { children: ReactNode }) => {
   const ref = useRef(null);
-  const { scrollY } = useScroll();
-  const [scrollVal, setScrollVal] = useState(0);
-
+  const { scrollY } = useScroll({ target: ref });
   const width = useTransform(scrollY, [170, 500], ["80%", "100%"]);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrollVal(latest);
-  });
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.scrollTo({
+        top: 160,
+        behavior: "smooth",
+      });
+    }, 300);
 
-  console.log(width.get());
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center">
+    <div ref={ref} className="w-full min-h-screen flex flex-col items-center">
       <div className="w-full h-screen"></div>
-      <div></div>
-      <div
-        className="bg-white min-h-screen flex items-start justify-center py-12"
+      <motion.div
+        className=" min-h-screen flex flex-col items-start justify-center"
         style={{
-          width: width.get(),
+          width,
         }}
       >
         {children}
-      </div>
+      </motion.div>
     </div>
   );
 };

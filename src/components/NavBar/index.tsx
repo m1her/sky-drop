@@ -1,22 +1,22 @@
 "use client";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import React, { useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 
 export const NavBar = () => {
-  const { scrollY } = useScroll();
-  const [scrollVal, setScrollVal] = useState(0);
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrollVal(latest);
-  });
+  const refNav = useRef(null);
+  const { scrollY } = useScroll({ target: refNav });
+  const backgroundColor = useTransform(
+    scrollY,
+    [170, 400],
+    ["rgba(255, 255, 255,0)", "rgba(255, 255, 255,1)"]
+  );
 
   return (
     <motion.div
+      ref={refNav}
       className="fixed top-0 left-0 w-full px-8 py-4 z-50"
       style={{
-        backgroundColor: `rgba(255, 255, 255, ${
-          scrollVal <= 400 ? scrollVal / 400 : 1
-        })`,
+        backgroundColor,
       }}
     >
       <div className="text-darkBlue text-[34px] font-urbanist flex items-center justify-start">
