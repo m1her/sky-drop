@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 
 export const SecondLayerContent = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div ref={ref} className="w-full h-full bg-white pt-24">
@@ -49,7 +49,7 @@ export const SecondLayerContent = () => {
           </div>
         </div>
         <div className="text-5xl font-bold font-urbanist text-darkBlue">
-          Then look at the sky
+          Then look at the <span className="text-royalBlue">sky</span>
         </div>
         <div className="grid grid-cols-4 gap-8 w-full">
           <motion.div initial={{}} className="flex flex-col gap-6 w-full">
