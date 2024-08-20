@@ -37,18 +37,7 @@ export const FirstLayerContent = () => {
       >
         <div className="text-white font-urbanist flex flex-col border-r-2 border-white/60 pr-8">
           <div className="text-[4em] whitespace-nowrap font-extrabold flex">
-            {isInView ? (
-              <AnimatedNumbers
-                transitions={(index) => ({
-                  type: "spring",
-                  duration: 1,
-                })}
-                animateToNumber={1}
-              />
-            ) : (
-              ""
-            )}
-            Minute
+           1 Minute
           </div>
           <div className="text-[1.5em] font-bold">Delivery Windows</div>
           <div className="text-[1em] font-jost">
@@ -59,18 +48,7 @@ export const FirstLayerContent = () => {
 
         <div className="text-white font-urbanist flex flex-col pl-8 border-r-2 border-white/60 pr-8">
           <div className="text-[4em] whitespace-nowrap font-extrabold flex">
-            {isInView ? (
-              <AnimatedNumbers
-                transitions={(index) => ({
-                  type: "spring",
-                  duration: 1,
-                })}
-                animateToNumber={8}
-              />
-            ) : (
-              ""
-            )}
-            x Faster
+            8x Faster
           </div>
           <div className="text-[1.5em] font-bold">Delivery Speeds</div>
           <div className="text-[1em] font-jost">
@@ -81,18 +59,7 @@ export const FirstLayerContent = () => {
 
         <div className="text-white font-urbanist flex flex-col pl-8">
           <div className="text-[4em] whitespace-nowrap font-extrabold flex">
-            {isInView ? (
-              <AnimatedNumbers
-                transitions={(index) => ({
-                  type: "spring",
-                  duration: 1,
-                })}
-                animateToNumber={100}
-              />
-            ) : (
-              ""
-            )}
-            %
+            100%
           </div>
           <div className="text-[1.5em] font-bold">Emission-Free</div>
           <div className="text-[1em] font-jost">
