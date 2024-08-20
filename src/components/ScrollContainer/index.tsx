@@ -19,7 +19,7 @@ export const ScrollContainer = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <div ref={ref} className="w-full min-h-screen flex flex-col items-center">
+    <div ref={ref} className="w-full min-h-screen flex flex-col items-center overflow-hidden">
       <div className="w-full h-screen"></div>
       <motion.div
         className=" min-h-screen flex flex-col items-start justify-center"

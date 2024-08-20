@@ -27,19 +27,31 @@ export const ThirdLayerContent = () => {
 
         <div className="grid grid-cols-2 items-center justify-center gap-16">
           <div className="flex flex-col items-center gap-4 text-2xl font-urbanist font-extrabold text-darkBlue">
-            <FontAwesomeIcon icon={faLocationDot} className="scale-125" />
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              className="scale-125 w-6 aspect-square"
+            />
             <div>BOISE, IDAHO</div>
           </div>
           <div className="flex flex-col items-center gap-4 text-2xl font-urbanist font-extrabold text-darkBlue">
-            <FontAwesomeIcon icon={faLocationDot} className="scale-125" />
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              className="scale-125 w-6 aspect-square"
+            />
             <div>SAVANNAH, GEORGIA</div>
           </div>
           <div className="flex flex-col items-center gap-4 text-2xl font-urbanist font-extrabold text-darkBlue">
-            <FontAwesomeIcon icon={faLocationDot} className="scale-125" />
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              className="scale-125 w-6 aspect-square"
+            />
             <div>ASHEVILLE, NORTH CAROLINA</div>
           </div>
           <div className="flex flex-col items-center gap-4 text-2xl font-urbanist font-extrabold text-darkBlue">
-            <FontAwesomeIcon icon={faLocationDot} className="scale-125" />
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              className="scale-125 w-6 aspect-square"
+            />
             <div>EUGENE, OREGON</div>
           </div>
         </div>

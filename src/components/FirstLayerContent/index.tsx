@@ -1,7 +1,13 @@
+"use client";
+import { useInView } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+import AnimatedNumbers from "react-animated-numbers";
 
 export const FirstLayerContent = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <div className="w-full flex flex-col justify-center items-center rounded-t-lg px-8 bg-white pt-12 pb-28">
       <div className="flex flex-col items-center">
@@ -21,12 +27,29 @@ export const FirstLayerContent = () => {
       </div>
 
       <div className="w-full text-3xl font-semibold text-center font-urbanist mb-12 text-gray-400">
-        <span className="text-black">Our mission </span> is to improve the world
-        by making lightning-fast suburban deliveries affordable, green and safe.
+        <span className="text-eggplant">Our mission </span> is to improve the
+        world by making lightning-fast suburban deliveries affordable, green and
+        safe.
       </div>
-      <div className="bg-darkBlue rounded-lg w-fit p-16 flex items-center">
+      <div
+        ref={ref}
+        className="bg-darkBlue rounded-lg w-fit p-16 flex items-center"
+      >
         <div className="text-white font-urbanist flex flex-col border-r-2 border-white/60 pr-8">
-          <div className="text-[4em] font-extrabold">1 Minute</div>
+          <div className="text-[4em] whitespace-nowrap font-extrabold flex">
+            {isInView ? (
+              <AnimatedNumbers
+                transitions={(index) => ({
+                  type: "spring",
+                  duration: 1,
+                })}
+                animateToNumber={1}
+              />
+            ) : (
+              ""
+            )}
+            Minute
+          </div>
           <div className="text-[1.5em] font-bold">Delivery Windows</div>
           <div className="text-[1em] font-jost">
             Deliveries arrive in the exact right place with down-to-the-second
@@ -35,7 +58,20 @@ export const FirstLayerContent = () => {
         </div>
 
         <div className="text-white font-urbanist flex flex-col pl-8 border-r-2 border-white/60 pr-8">
-          <div className="text-[4em] font-extrabold">8x Faster</div>
+          <div className="text-[4em] whitespace-nowrap font-extrabold flex">
+            {isInView ? (
+              <AnimatedNumbers
+                transitions={(index) => ({
+                  type: "spring",
+                  duration: 1,
+                })}
+                animateToNumber={8}
+              />
+            ) : (
+              ""
+            )}
+            x Faster
+          </div>
           <div className="text-[1.5em] font-bold">Delivery Speeds</div>
           <div className="text-[1em] font-jost">
             SkyDrop delivers at about 8x the speed of traditional car
@@ -44,7 +80,20 @@ export const FirstLayerContent = () => {
         </div>
 
         <div className="text-white font-urbanist flex flex-col pl-8">
-          <div className="text-[4em] font-extrabold">100%</div>
+          <div className="text-[4em] whitespace-nowrap font-extrabold flex">
+            {isInView ? (
+              <AnimatedNumbers
+                transitions={(index) => ({
+                  type: "spring",
+                  duration: 1,
+                })}
+                animateToNumber={100}
+              />
+            ) : (
+              ""
+            )}
+            %
+          </div>
           <div className="text-[1.5em] font-bold">Emission-Free</div>
           <div className="text-[1em] font-jost">
             Our fully electric, battery-powered aircraft fly with zero carbon

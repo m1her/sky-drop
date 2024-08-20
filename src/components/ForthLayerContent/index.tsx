@@ -1,6 +1,4 @@
 "use client";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
@@ -24,7 +22,7 @@ export const ForthLayerContent = () => {
             className="outline-none px-4 py-2 m-2 font-jost peer text-darkBlue"
             placeholder="my-email@example.com"
           />
-          <div className="w-20 bg-gray-300 peer-focus:bg-royalBlue flex items-center justify-center text-white font-urbanist font-bold transition-all duration-300">
+          <div className="w-20 bg-gray-300 peer-focus:bg-royalBlue flex items-center justify-center text-white font-urbanist font-bold transition-all duration-300 cursor-pointer">
             JOIN
           </div>
         </div>
