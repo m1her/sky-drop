@@ -2,7 +2,6 @@
 import { useInView } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
-import AnimatedNumbers from "react-animated-numbers";
 
 export const FirstLayerContent = () => {
   const ref = useRef(null);
